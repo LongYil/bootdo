@@ -1,0 +1,17 @@
+global:
+  repository: 10.10.101.22:8443/middleware
+  namespace: zeus
+  storageClass: default
+  replicaCount: 1
+  bootdo:
+    image: bootdo
+    tag: v1.0.0
+    pullPolicy: Always
+    resources:
+      requests:
+        cpu: 1000m
+        memory: 2Gi
+      limits:
+        cpu: 2000m
+        memory: 4Gi
+    nodeSelector: {}

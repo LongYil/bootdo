@@ -1,0 +1,57 @@
+nameOverride: ''
+ssh:
+  enabled: false
+type: master-master
+podAntiAffinity: soft
+mode: 1m-1s
+init_at_setup:
+  enabled: false
+replicaCount: 2
+tolerations: {}
+businessDeploy: []
+chart-version: 1.2.0-alpha.1
+syncMode: semi-sync
+podAntiAffinityTopologKey: kubernetes.io/hostname
+replication:
+  enabled: false
+aliasName: mysql-qtsc
+image:
+  backupRestoreImageTag: v1.2.0-hc.3
+  backupRestoreImageTag_8: v8.0-1
+  helmtestImageTag: v1.0.0
+  initImageTag: 1.0.4
+  initImageTag_8: 1.0.4-8.0
+  middlewareImageTag: v5.7.23-hc.1
+  middlewareImageTag_8: v8.0.26-hc.1
+  monitorImageTag: v0.12.1
+  pullPolicy: IfNotPresent
+  repository: 152.10.1.61:8443/middleware
+  testImageTag: v0.3
+storageProvider: {}
+resources:
+  limits:
+    cpu: '4'
+    memory: 16Gi
+  requests:
+    cpu: '4'
+    memory: 16Gi
+nodeAffinity: {}
+version: '5.7'
+args:
+  character_set_server: utf8mb4
+  innodb_adaptive_hash_index: 'OFF'
+  innodb_flush_log_at_trx_commit: 2
+  interactive_timeout: 600
+  max_allowed_packet: '536870912'
+  max_connections: 1000
+  max_execution_time: 60000
+  performance_schema_max_table_instances: 2500
+  root_password: Hc@Cloud01
+  server_port: 3306
+  sql_mode: NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,ERROR_FOR_DIVISION_BY_ZERO
+  wait_timeout: 1800
+service: {}
+storageClassName: middleware-lvm
+fullnameOverride: ''
+storageSize: 500Gi
+middleware-desc: null
