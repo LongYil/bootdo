@@ -1,5 +1,8 @@
 server:
   session-timeout: 1800
+
+system:
+  usercenter: zeus
 bootdo:
   uploadPath: c:/var/uploaded_files/
   username: admin
